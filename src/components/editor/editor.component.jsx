@@ -47,6 +47,7 @@ const Editor = () => {
   const chooseCommand = (e) => {
     switch (e.key) {
       case 'Enter': {
+        // Here we can type for example the command "/1" then type the text we're gonna write in the heading then press Enter to apply that
         const shortcut = command.slice(0, 2);
         if (shortcut === '/1') {
           addBlock(
