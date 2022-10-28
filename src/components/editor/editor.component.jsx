@@ -4,6 +4,7 @@ import { FiClock, FiArrowDownLeft } from 'react-icons/fi';
 import { BsCheck2Circle, BsThreeDotsVertical } from 'react-icons/bs';
 import { RiCloudyLine } from 'react-icons/ri';
 import Popup from '../popup/popup.component';
+
 import './editor.styles.css';
 import profile from '../../assets/profile.png';
 
@@ -150,7 +151,6 @@ const Editor = () => {
     const newInnerHTML =
       innerHTML.substring(0, caretIndex - command.length) +
       innerHTML.substring(caretIndex);
-
     caret.focusNode.parentElement.innerHTML = newInnerHTML;
     adjustCursor();
   };
