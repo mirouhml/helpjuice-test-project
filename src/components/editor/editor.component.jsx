@@ -16,11 +16,13 @@ const Editor = () => {
   const [startCommand, setStartCommand] = useState(false);
   const [caret, setCaret] = useState(null);
 
+  // This useeffect makes sure that when we first enter the website the caret is on the text block.
   useEffect(() => {
     text.current.focus();
     getCaretCoordinates();
   }, []);
 
+  // This useeffect makes sure that if the popup is at the end of the screen and isn't visible it should be shown above the text instead
   useEffect(() => {
     if (popupDisplay === 'block') {
       if (
@@ -34,12 +36,14 @@ const Editor = () => {
     }
   }, [coordinates.x, coordinates.y, popupDisplay]);
 
+  // This useeffect makes sure that whenever the command is empty the popup is hidden
   useEffect(() => {
     if (command.length === 0) {
       setPopupDisplay('none');
     }
   }, [command]);
 
+  // This functions is for choosing the command that we want to do based on what's on the popup or what we wrote
   const chooseCommand = (e) => {
     switch (e.key) {
       case 'Enter': {
@@ -61,6 +65,7 @@ const Editor = () => {
 
       case 'Escape': {
         setPopupDisplay('none');
+        setCommand('');
         break;
       }
 
@@ -84,6 +89,7 @@ const Editor = () => {
     }
   };
 
+  // This function fetches the caret's coordinates as they are necessary for adding the block correctly
   const getCaretCoordinates = () => {
     let x = 0;
     let y = 0;
@@ -103,6 +109,7 @@ const Editor = () => {
     setCoordinates({ x, y });
   };
 
+  // This functions add the block chosen through the popup
   const addBlock = (block, e) => {
     e.preventDefault();
     setPopupDisplay('none');
@@ -120,9 +127,11 @@ const Editor = () => {
           `<${block.type} data-placeholder='${block.name}'>${block.content}</${block.type}>`
         );
       clearCommand(caret, command);
+      getCaretCoordinates();
     }
   };
 
+  // This function clears the command from the element so that it's not visible anymore
   const clearCommand = () => {
     const element = caret.focusNode.parentElement;
     let caretIndex = 0;
@@ -145,6 +154,7 @@ const Editor = () => {
     adjustCursor();
   };
 
+  // This function adjusts the cursor to the next element that got created
   const adjustCursor = () => {
     const elementLength = window.getSelection().focusNode.innerHTML.length;
     for (let i = 0; i < elementLength + 1; i++) {

@@ -2,7 +2,10 @@ import { TfiText } from 'react-icons/tfi';
 
 import './popup.styles.css';
 
+// This is the popup, I wanted to make it as a separate component so that the code is cleaner.
 const Popup = ({ coordinates, display, addBlock, command, popup }) => {
+  // This is an array for the blocks that we want to add, for now there is only h1 as per the requirements but
+  // if we want to add more we can just edit the array, this allows scalability
   const blocks = [
     {
       type: 'h1',
@@ -15,7 +18,7 @@ const Popup = ({ coordinates, display, addBlock, command, popup }) => {
     <div
       className='popup'
       style={{
-        top: coordinates.y + 25,
+        top: coordinates.y + 35,
         left: coordinates.x,
         display: display,
       }}
