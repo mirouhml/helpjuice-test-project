@@ -55,6 +55,7 @@ const Editor = () => {
             e
           );
         }
+        setCommand('');
         break;
       }
 
