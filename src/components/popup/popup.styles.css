@@ -1,0 +1,57 @@
+.popup {
+  position: fixed;
+  text-align: left;
+  border: 1px solid #d5d6d8a4;
+  border-radius: 6px;
+  width: fit-content;
+  box-shadow: 1px 1px 6px #d5d6d8;
+  background-color: white;
+}
+
+.popup-header {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+}
+
+.popup-header > .note {
+  color: #9Ca2ad;
+  margin-top: 0.3rem;
+}
+
+.filtering-keywords {
+  color: #6c727f;
+  margin-top: 1rem;
+}
+
+.filter {
+  color: white;
+  background-color: #3565a9;
+  padding: 0 3px;
+  border-radius: 4px;
+}
+
+.popup-block {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.popup-block > .icon {
+  width: 50px;
+  color: #9DA3AE;
+}
+
+.popup-block-content {
+  flex-grow: 3;
+}
+
+.popup-block-content > p {
+  color: #6c727f;
+}
+
+.popup-block:hover {
+  background-color: #f3f4f6;
+}
+
