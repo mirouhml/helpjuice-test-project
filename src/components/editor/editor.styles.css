@@ -1,0 +1,67 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  width: 45%;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #d5d6d8a4;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+}
+
+.p {
+  padding: 4px 6px;
+  background-color: #d9f9e6;
+  color: #3b7b5f;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #9Ca2ad;
+}
+
+.profile {
+  width: 1.5rem;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  color: #9Ca2ad;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.intro {
+  text-align: left;
+}
+
+hr {
+  border: 0;
+  border-top: 0.5px solid #cbcdd0ac;
+}
+
+.text {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+[data-placeholder]:empty:before{
+  content: attr(data-placeholder);
+  color: #888;
+  font-style: italic;
+}
