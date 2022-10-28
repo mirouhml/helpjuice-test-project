@@ -14,7 +14,7 @@ This is a small replica of Notion, the only options available are: adding an H1 
 
 ## Live demo
 
-You can visit live version via [Heroku](https://mirouhml.github.io/covid-19-tracker/).
+You can visit live version via [Heroku](https://helpjuice-notion.herokuapp.com/).
 
 ## Getting Started
 
